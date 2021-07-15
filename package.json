@@ -9,7 +9,9 @@
     "cover": "npm run lint && nyc mocha --check-leaks -t 10000 -b",
     "test": "npm run lint && mocha --check-leaks -t 10000 -b",
     "jsdoc": "./scripts/jsdoc.sh",
-    "postpublish": "./scripts/postpublish.sh"
+    "postpublish": "./scripts/postpublish.sh",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "homepage": "https://bookshelfjs.org",
   "repository": {
@@ -28,7 +30,8 @@
     "bluebird": "^3.7.2",
     "create-error": "~0.3.1",
     "inflection": "^1.12.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "snyk": "^1.662.0"
   },
   "husky": {
     "hooks": {
@@ -48,7 +51,7 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^3.0.5",
-    "jsdoc": "^3.6.3",
+    "jsdoc": "^3.6.7",
     "knex": "~0.21.0",
     "lint-staged": "^9.2.5",
     "mocha": "^7.1.2",
@@ -86,5 +89,6 @@
   "readmeFilename": "README.md",
   "engines": {
     "node": ">=6"
-  }
+  },
+  "snyk": true
 }
